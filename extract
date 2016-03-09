@@ -1,0 +1,13 @@
+#! /bin/bash
+
+i=1
+for file in *.zip
+do
+    echo $file
+    extfilename=$i-data.csv
+    unzip -u "$file" -d tmp
+    mv tmp/*.csv data/$extfilename
+    i=$[$i+1]
+
+    
+done
